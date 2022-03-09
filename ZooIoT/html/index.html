@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Zoo IoT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Duru+Sans|Actor' rel='stylesheet' type='text/css'>
+
+    <!--Bootshape-->
+    <link href="css/bootshape.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span class="green">Zoo</span> IoT</a>
+            </div>
+            <nav role="navigation" class="collapse navbar-collapse navbar-right">
+                <ul class="navbar-nav nav">
+                    <li class="active"><a href="#">Inicio</a></li>
+                    <li id="register"><a href="register.html">Registro</a></li>
+                    <li id="login"><a href="login.html">Iniciar Sesion</a></li>
+                    <li id="panel" style="display: none"><a href="menu.html">Panel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div><!-- End Navigation bar -->
+    <!-- Slide gallery -->
+    <div class="jumbotron">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/carousel1.jpeg" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/carousel2.jpeg" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/carousel3.jpeg" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div><!-- End Slide gallery -->
+    <h2 class="text-center">Algunos Tipos de Climas</h2>
+    <!-- Thumbnails -->
+    <div class="container thumbs">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/tropical.jpeg" alt="" class="img-circle">
+                <div class="caption">
+                    <h3 class="text-center">Tropical</h3>
+                    <p>El clima tropical es un tipo de clima cálido habitual de la zona intertropical. Los climas tropicales además de tener una temperatura media mensual de 25 °C aproximadamente, se caracterizan por no sufrir heladas. Por lo tanto, los términos verano o invierno no tienen significado en las zonas con menor oscilación térmica​</p>
+                    <div class="btn-toolbar text-center">
+                        <a href="#" role="button" class="btn btn-success">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/seco.JPG" alt="" class="img-circle">
+                <div class="caption">
+                    <h3 class="text-center">Seco</h3>
+                    <p>El clima seco es un tipo de clima en donde la evaporación supera a la humedad proveniente de la precipitación. Se desarrolla entre los 15° y los 55° de latitud, frecuentemente en el interior de las grandes masas continentales, alejado tanto de la influencia de las masas de aire polar marítimo como de la humedad tropical.</p>
+                    <div class="btn-toolbar text-center">
+                        <a href="#" role="button" class="btn btn-success">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/templado.jpeg" alt="" class="img-circle">
+                <div class="caption">
+                    <h3 class="text-center">Templado</h3>
+                    <p>El clima templado o mesotérmico es un tipo de clima intermedio entre el clima cálido y el clima frío. Se caracteriza por temperaturas medias anuales aproximadamente entre 12 y 18 °C y precipitaciones medias entre 600 mm y 2000 mm anuales, aunque en determinados casos pueden tener desde 400 mm.</p>
+                    <div class="btn-toolbar text-center">
+                        <a href="#" role="button" class="btn btn-success">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Thumbnails -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- // <script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootshape.js"></script>
+    <script src="js/socket.js"></script>
+</body>
+</html>

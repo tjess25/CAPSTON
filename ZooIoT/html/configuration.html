@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Zoo IoT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Duru+Sans|Actor' rel='stylesheet' type='text/css'>
+
+    <!--Bootshape-->
+    <link href="css/bootshape.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="habitats.html"><span class="green">Zoo</span> IoT</a>
+            </div>
+            <nav role="navigation" class="collapse navbar-collapse navbar-right">
+                <ul class="navbar-nav nav">
+                    <li class="active"><a href="habitats.html">Inicio</a></li>
+                    <li><a href="viewdata.html">Monitoreo</a></li>
+                    <li><a href="manual.html">Acciones</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div><!-- End Navigation bar -->
+
+    <div class="container">
+        <form onsubmit="sendUpdate(event)">
+            <div class="form-group">
+                <label for="nameInput">Nombre de habitat</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Nombre para identificar el habitat" disabled>
+            </div>
+            <div class="form-group">
+                <label for="tempminInput">Temperatura Minima</label>
+                <input type="number" class="form-control" id="tempminInput" placeholder="Temperatura minima para el habitat">
+            </div>
+            <div class="form-group">
+                <label for="tempmaxInput">Temperatura Maxima</label>
+                <input type="number" class="form-control" id="tempmaxInput" placeholder="Temperatura minima para el habitat">
+            </div>
+            <div class="form-group">
+                <label for="humInput">Humedad minima</label>
+                <input type="number" class="form-control" id="humInput" placeholder="Porcentaje Humedad minima">
+            </div>
+            <div class="form-group">
+                <label for="timeinitInput">Hora inicio del día</label>
+                <input type="time" class="form-control" id="timeinitInput" placeholder="Hora en que se prende la luz UV">
+            </div>
+            <div class="form-group">
+                <label for="timeendInput">Hora fin del día</label>
+                <input type="time" class="form-control" id="timeendInput" placeholder="Hora en que se apaga la luz UV">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Aceptar</button>
+        </form>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- // <script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootshape.js"></script>
+    <script src="js/socket.js"></script>
+
+    <script src="js/configuration.js"></script>
+</body>
+</html>
